@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../include/Model/QuanLy.h"
+#include "../../include/model/QuanLy.h"
 
 using namespace std;
 

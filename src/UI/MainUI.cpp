@@ -1,6 +1,6 @@
 #include <iostream>
 #include <windows.h>
-#include "../../include/UI/MainUI.h"
+#include "../../include/ui/MainUI.h"
 
 using namespace std;
 

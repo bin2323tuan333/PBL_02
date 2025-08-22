@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Model/SinhVien.h"
+#include "../model/SinhVien.h"
 #include "../../lib/HashTable.h"
 
 using namespace std;

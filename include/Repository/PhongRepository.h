@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Model/Phong.h"
+#include "../model/Phong.h"
 #include "../../lib/HashTable.h"
 
 using namespace std;

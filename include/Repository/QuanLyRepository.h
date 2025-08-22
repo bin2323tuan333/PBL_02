@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../Model/QuanLy.h"
+#include "../model/QuanLy.h"
 #include "../../lib/HashTable.h"
 
 using namespace std;

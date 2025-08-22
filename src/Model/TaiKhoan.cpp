@@ -1,4 +1,4 @@
-#include "../../include/Model/TaiKhoan.h"
+#include "../../include/model/TaiKhoan.h"
 
 TaiKhoan::TaiKhoan() {}
 TaiKhoan::TaiKhoan(string taiKhoanID, string tenDangNhap, string matKhau)

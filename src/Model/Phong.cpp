@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../include/Model/Phong.h"
+#include "../../include/model/Phong.h"
 using namespace std;
 
 Phong::Phong() {}

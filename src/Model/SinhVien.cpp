@@ -1,4 +1,4 @@
-#include "../../include/Model/SinhVien.h"
+#include "../../include/model/SinhVien.h"
 #include <iostream>
 
 using namespace std;
