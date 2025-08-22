@@ -43,3 +43,13 @@ void TaiKhoanRepository::load(const string filename)
         }
     }
 }
+
+void TaiKhoanRepository::save(const string filename)
+{
+    ofstream file(filename);
+    if (!file.is_open())
+    {
+        cout << "Khong the mo file!" << endl;
+        return;
+    }
+}
