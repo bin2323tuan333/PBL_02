@@ -1,0 +1,6 @@
+P101;Phong 101;1;4;3;Thuong;1200000;Con cho;Phong 4 giuong, co cua so thoang mat
+P102;Phong 102;1;4;4;Thuong;1200000;Day;Phong 4 giuong, gan nha ve sinh
+P103;Phong 103;1;6;5;Tap the;900000;Con cho;Phong tap the, gia re, phu hop sinh vien xa
+P201;Phong 201;2;2;2;VIP;2000000;Day;Phong VIP 2 giuong, co may lanh va nha ve sinh rieng
+P202;Phong 202;2;2;1;VIP;2000000;Con cho;Phong VIP 2 giuong, rong rai, co ban cong
+P301;Phong 301;3;8;7;Tap the;800000;Con cho;Phong lon tap the, gan phong sinh hoat chung

@@ -1,0 +1,8 @@
+TK001;nguyenvana;123456;vana@gmail.com;2021-09-01;1
+TK002;tranthib;abc123;thib@gmail.com;2022-09-01;1
+TK003;levanc;pass123;vanc@gmail.com;2020-09-01;0
+TK004;phamthid;123456;thid@gmail.com;2021-09-01;1
+TK005;hoange;abcd1234;hoange@gmail.com;2022-09-01;1
+TK100;qlnguyen;123456;nguyenquan@ktx.com;2020-01-01;1
+TK101;qlytran;123456;tranly@ktx.com;2021-03-01;1
+TK102;qlhieu;123456;lehieu@ktx.com;2021-06-01;1
