@@ -52,4 +52,30 @@ void TaiKhoanRepository::save(const string filename)
         cout << "Khong the mo file!" << endl;
         return;
     }
+
+    for (int i = 0; i < dsTaiKhoan.getSize(); i++)
+    {
+        HashNode<string, TaiKhoan> *tmpNode = dsTaiKhoan.getHead(i);
+        while (tmpNode != nullptr)
+        {
+            file << tmpNode->value.getTaiKhoanID() << ";"
+                 << tmpNode->value.getTenDangNhap() << ";"
+                 << tmpNode->value.getMatKhau() << ";"
+                 << tmpNode->value.getEmail() << ";"
+                 << (tmpNode->value.getNgayTao()).getYear() << "-" << (tmpNode->value.getNgayTao()).getMonth() << "-" << (tmpNode->value.getNgayTao()).getDay() << ";"
+                 << tmpNode->value.getTrangThai() << endl;
+            tmpNode = tmpNode->next;
+        }
+    }
+}
+
+void TaiKhoanRepository::add(TaiKhoan tk)
+{
+    TaiKhoan *taiKhoanInsert = dsTaiKhoan.search(tk.getTaiKhoanID());
+    dsTaiKhoan.insert(tk.getTaiKhoanID(), *taiKhoanInsert);
+}
+
+void TaiKhoanRepository::remove(string taiKhoanID)
+{
+    dsTaiKhoan.remove(taiKhoanID);
 }

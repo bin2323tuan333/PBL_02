@@ -18,7 +18,7 @@ template <typename Key, typename Value>
 class HashTable
 {
 private:
-    static const int DEFAULT_SIZE = 1009;
+    static const int DEFAULT_SIZE = 307;
     HashNode<Key, Value> **T;
     int size;
 
@@ -56,6 +56,17 @@ public:
             }
         }
         delete[] T;
+    }
+
+    int getSize()
+    {
+        return this->DEFAULT_SIZE;
+    }
+
+    HashNode<Key, Value> *getHead(int idxkey)
+    {
+        int idx = hashFunction(idxkey);
+        return T[idx];
     }
 
     // Insert
