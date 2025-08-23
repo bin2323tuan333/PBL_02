@@ -2,6 +2,7 @@
 #define TAIKHOANSERVICE_H
 
 #include <iostream>
+#include "../model/TaiKhoan.h"
 #include "../repository/TaiKhoanRepository.h"
 
 using namespace std;
@@ -12,8 +13,8 @@ private:
     TaiKhoanRepository &tkRepository;
 
 public:
-    TaiKhoanService(TaiKhoanRepository &tkRepository);
-    bool dangNhap(string taiKhoanID, string matKhau);
+    TaiKhoanService(TaiKhoanRepository &tkRepo) : tkRepository(tkRepo) {}
+    TaiKhoan dangNhap(string taiKhoanID, string matKhau);
 };
 
 #endif

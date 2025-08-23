@@ -1,0 +1,75 @@
+main()
+  └─► LoginUI::dangNhap()
+        ├─► nhập username/password
+        └─► AuthService::login(username, password)
+               └─► UserRepo::getUser(username)
+                       └─► đọc users.txt → trả về User {u, p, r} hoặc User rỗng
+               └─ kiểm tra (user.username != "" && user.password == password)
+               └─ trả về User hợp lệ (hoặc rỗng)
+        └─ in kết quả, return User
+  └─► if (user.role == "student")  → StudentUI.showMenu()
+      else                         → ManagerUI.showMenu()
+
+StudentUI::showMenu()
+  ┌─ [1] Xem thông tin phòng
+  │     └─► RoomService::getRoomByStudent(student.id)
+  │            └─► RoomRepo::getRoomById(roomId)
+  │            └─  (có thể gọi thêm StudentRepo::getStudentsInRoom(roomId))
+  │            └─ return Room (+ danh sách SV)
+  │     └─ UI hiển thị
+  │
+  ├─ [2] Xem hóa đơn
+  │     └─► BillService::getBillsByStudent(student.id)
+  │            └─► BillRepo::getBillsByStudentId(student.id)
+  │            └─ return vector<Bill>
+  │     └─ UI hiển thị (đã/ Chưa thanh toán)
+  │
+  └─ [3] Đăng xuất
+        └─ return về main() → vòng lặp đăng nhập
+
+ManagerUI::showMenu()
+  ┌─ [1] Truy vấn sinh viên
+  │     └─► StudentService::getStudentInfo(id | name)
+  │            └─► StudentRepo::getStudentById(...) / search
+  │            └─ return Student
+  │     └─ UI hiển thị
+  │
+  ├─ [2] Truy vấn phòng
+  │     └─► RoomService::getRoom(roomId)
+  │            └─► RoomRepo::getRoomById(roomId)
+  │            └─ return Room (+Sinh viên trong phòng)
+  │     └─ UI hiển thị
+  │
+  ├─ [3] Thêm sinh viên
+  │     └─► StudentService::addStudent(Student s)
+  │            ├─ validate (trùng id? phòng còn chỗ?)
+  │            ├─► StudentRepo::addStudent(s)
+  │            └─► RoomRepo::assignStudentToRoom(s.roomId, s.id)
+  │     └─ UI in kết quả (thành công/thất bại)
+  │
+  ├─ [4] Xóa sinh viên
+  │     └─► StudentService::removeStudent(id)
+  │            ├─ kiểm tra liên quan (hóa đơn…)
+  │            ├─► StudentRepo::removeStudent(id)
+  │            └─► RoomRepo::removeStudentFromRoom(roomId, id)
+  │     └─ UI in kết quả
+  │
+  ├─ [5] Tìm phòng trống
+  │     └─► RoomService::findEmptyRooms()
+  │            └─► RoomRepo::loadRooms() → lọc phòng còn chỗ
+  │            └─ return vector<Room>
+  │     └─ UI hiển thị
+  │
+  ├─ [6] Tra cứu hóa đơn chưa thanh toán
+  │     └─► BillService::getUnpaidBills()
+  │            └─► BillRepo::getUnpaidBills()
+  │            └─ return vector<Bill>
+  │     └─ UI hiển thị
+  │
+  ├─ [7] Tạo hóa đơn (nhập số điện/nước)
+  │     └─► BillService::createBill(roomId, soDien, soNuoc)
+  │            ├─ validate (room tồn tại? số hợp lệ?)
+  │            └─► BillRepo::addBill(bill)
+  │     └─ UI in kết quả
+  │
+  └─ [8] Đăng xuất → return về main()

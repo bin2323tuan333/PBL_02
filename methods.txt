@@ -1,0 +1,117 @@
+🔹 1. main.cpp 
+int main();
+void ShowMainMenu();                                // Hiển thị menu chính (đăng nhập, thoát)
+
+🔹 2. Presentation / Menu.h / Menu.cpp 
+void ShowLoginMenu();                               // Menu đăng nhập
+void ShowStudentMenu();                             // Menu cho sinh viên
+void ShowManagerMenu();                             // Menu cho quản lý
+
+LoginUI.h / LoginUI.cpp 
+void Login();                                       // Nhập user/pass → gọi AuthService để xác thực
+
+StudentUI.h / StudentUI.cpp 
+void ShowStudentInfo();                             // Hiển thị thông tin sinh viên
+void QueryRoomInfo();                               // Truy vấn thông tin phòng ở
+void QueryBills();                                  // Truy vấn thông tin hóa đơn
+void Logout();                                      // Quay lại màn hình chính
+
+ManagerUI.h / ManagerUI.cpp 
+void ShowManagerInfo();                             // Hiển thị thông tin quản lý
+void QueryStudent();                                // Truy vấn thông tin sinh viên
+void QueryRoom();                                   // Truy vấn thông tin phòng
+void AddStudent();                                  // Thêm sinh viên
+void RemoveStudent();                               // Xóa sinh viên
+void FindEmptyRooms();                              // Tìm phòng trống
+void QueryUnpaidBills();                            // Truy vấn hóa đơn chưa thanh toán
+void CreateBill();                                  // Tạo hóa đơn mới
+void Logout();                                      // Quay lại màn hình chính
+
+🔹 3. Business / AuthService.h / AuthService.cpp 
+bool Login(string username, string password);                                                   // Trả về true/false
+void Logout();                                                                                 // Đăng xuất
+bool IsStudent(string username);                                                               // Kiểm tra role
+bool IsManager(string username);
+
+StudentService.h / StudentService.cpp
+Student GetStudentInfo(string studentId);
+Room GetRoomInfo(string studentId);
+vector<Bill> GetStudentBills(string studentId);
+
+RoomService.h / RoomService.cpp
+Room GetRoom(string roomId);
+vector<Student> GetStudentsInRoom(string roomId);
+vector<Room> FindEmptyRooms();
+
+BillService.h / BillService.cpp
+vector<Bill> GetBillsByStudent(string studentId);
+vector<Bill> GetUnpaidBills();
+void CreateBill(string roomId, int soDien, int soNuoc);
+
+🔹 4. Data / StudentRepo.h / StudentRepo.cpp 
+vector<Student> LoadStudents(); // Đọc từ file
+Student GetStudentById(string id);
+void AddStudent(const Student &s);
+void RemoveStudent(string id);
+void SaveStudents(const vector<Student> &students);
+
+RoomRepo.h / RoomRepo.cpp
+vector<Room> LoadRooms();
+Room GetRoomById(string roomId);
+void SaveRooms(const vector<Room> &rooms);
+
+BillRepo.h / BillRepo.cpp
+vector<Bill> LoadBills();
+vector<Bill> GetBillsByStudentId(string id);
+vector<Bill> GetUnpaidBills();
+void AddBill(const Bill &b);
+void SaveBills(const vector<Bill> &bills);
+
+UserRepo.h / UserRepo.cpp
+vector<User> LoadUsers();
+User GetUser(string username);
+bool ValidateUser(string username, string password);
+
+🔹 5. Models /
+User.h 
+struct User
+{
+    string username;
+    string password;
+    string role; // "student" hoặc "manager"
+};
+
+Student.h 
+struct Student
+{
+    string id;
+    string name;
+    string roomId;
+};
+
+Room.h 
+struct Room
+{
+    string id;
+    int capacity;
+    vector<string> studentIds;
+};
+
+Bill.h 
+struct Bill
+{
+    string id;
+    string studentId;
+    string roomId;
+    int soDien;
+    int soNuoc;
+    bool paid;
+};
+
+🔹 6. Utils /
+    FileHelper.h / FileHelper.cpp vector<string> ReadFile(string path);
+void WriteFile(string path, const vector<string> &lines);
+
+Validator.h / Validator.cpp bool IsValidId(string id);
+bool IsValidName(string name);
+bool IsValidNumber(string s);

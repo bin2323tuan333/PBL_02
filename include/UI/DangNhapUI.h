@@ -2,18 +2,18 @@
 #define DANGNHAPUI_H
 
 #include <iostream>
+#include "../model/TaiKhoan.h"
+#include "../service/TaiKhoanService.h"
 using namespace std;
 
 class DangNhapUI
 {
 private:
-    string user, pass;
+    TaiKhoanService &tkService;
 
 public:
-    string getUser();
-    string getPass();
-
-    void dangNhap();
+    DangNhapUI(TaiKhoanService &service) : tkService(service) {}
+    TaiKhoan dangNhap();
 };
 
 #endif

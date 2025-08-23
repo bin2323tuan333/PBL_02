@@ -2,13 +2,23 @@
 #include "../../include/ui/DangNhapUI.h"
 using namespace std;
 
-string DangNhapUI::getUser() { return this->user; }
-string DangNhapUI::getPass() { return this->pass; }
-
-void DangNhapUI::dangNhap()
+TaiKhoan DangNhapUI::dangNhap()
 {
-    cout << "Nhap ten dang nhap: ";
-    getline(cin, this->user);
-    cout << "Nhap mat khau: ";
-    getline(cin, this->pass);
+    string username, password;
+    cout << "=== DANG NHAP ===\n";
+    cout << "Username: ";
+    cin >> username;
+    cout << "Password: ";
+    cin >> password;
+
+    TaiKhoan tk = tkService.dangNhap(username, password);
+    if (tk.getTaiKhoanID() == "")
+    {
+        cout << "Dang nhap that bai!\n";
+    }
+    else
+    {
+        cout << "Xin chao " << tk.getTenDangNhap() << "\n";
+    }
+    return tk;
 }
