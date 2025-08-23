@@ -10,8 +10,8 @@ private:
     HashTable<string, TaiKhoan> dsTaiKhoan;
 
 public:
-    void load(const string filename);
-    void save(const string filename);
+    void load();
+    void save();
 
     TaiKhoan *findTaiKhoan(string taiKhoanID);
     void add(TaiKhoan tk);

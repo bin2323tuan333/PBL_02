@@ -3,9 +3,9 @@
 #include <sstream>
 #include "../../include/repository/TaiKhoanRepository.h"
 
-void TaiKhoanRepository::load(const string filename)
+void TaiKhoanRepository::load()
 {
-    ifstream file(filename);
+    ifstream file(this->filename);
     if (!file.is_open())
     {
         cout << "Khong the mo file!" << endl;
@@ -44,9 +44,9 @@ void TaiKhoanRepository::load(const string filename)
     }
 }
 
-void TaiKhoanRepository::save(const string filename)
+void TaiKhoanRepository::save()
 {
-    ofstream file(filename);
+    ofstream file(this->filename);
     if (!file.is_open())
     {
         cout << "Khong the mo file!" << endl;

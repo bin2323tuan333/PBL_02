@@ -9,9 +9,10 @@ using namespace std;
 class TaiKhoanService
 {
 private:
-    TaiKhoanRepository tkRepository;
+    TaiKhoanRepository &tkRepository;
 
 public:
+    TaiKhoanService(TaiKhoanRepository &tkRepository);
     bool dangNhap(string taiKhoanID, string matKhau);
 };
 

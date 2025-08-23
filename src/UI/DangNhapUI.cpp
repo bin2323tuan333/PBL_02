@@ -2,11 +2,13 @@
 #include "../../include/ui/DangNhapUI.h"
 using namespace std;
 
+string DangNhapUI::getUser() { return this->user; }
+string DangNhapUI::getPass() { return this->pass; }
+
 void DangNhapUI::dangNhap()
 {
-    string user, pass;
     cout << "Nhap ten dang nhap: ";
-    cin >> user;
+    getline(cin, this->user);
     cout << "Nhap mat khau: ";
-    cin >> pass;
+    getline(cin, this->pass);
 }

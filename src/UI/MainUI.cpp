@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include "../../include/ui/MainUI.h"
+#include "../../include/ui/DangNhapUI.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void MainUI::showMenu()
     cout << "------------------------------------------------" << endl;
 }
 
-void MainUI::xulyMenu()
+int MainUI::xulyMenu()
 {
     int choice = 0;
     showMenu();
@@ -25,9 +26,15 @@ void MainUI::xulyMenu()
         cin >> choice;
         system("cls");
         if (choice == 1)
-            cout << "ban da chon 1" << endl;
+        {
+            DangNhapUI dn;
+            dn.dangNhap();
+        }
         else if (choice == 2)
+        {
             cout << "Ban da thoat khoi chuong trinh..." << endl;
+            return 0;
+        }
         else
         {
             showMenu();

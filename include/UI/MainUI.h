@@ -5,7 +5,7 @@ class MainUI
 {
 public:
     void showMenu();
-    void xulyMenu();
+    int xulyMenu();
 };
 
 #endif
