@@ -3,6 +3,11 @@
 #include <sstream>
 #include "../../include/repository/TaiKhoanRepository.h"
 
+TaiKhoanRepository::TaiKhoanRepository()
+{
+    load();
+}
+
 void TaiKhoanRepository::load()
 {
     ifstream file(this->filename);
@@ -78,4 +83,9 @@ void TaiKhoanRepository::add(TaiKhoan tk)
 void TaiKhoanRepository::remove(string taiKhoanID)
 {
     dsTaiKhoan.remove(taiKhoanID);
+}
+
+TaiKhoan *TaiKhoanRepository::findTaiKhoan(string taiKhoanID)
+{
+    return dsTaiKhoan.search(taiKhoanID);
 }

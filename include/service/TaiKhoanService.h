@@ -14,7 +14,7 @@ private:
 
 public:
     TaiKhoanService(TaiKhoanRepository &tkRepo) : tkRepository(tkRepo) {}
-    TaiKhoan dangNhap(string taiKhoanID, string matKhau);
+    TaiKhoan *dangNhap(string taiKhoanID, string matKhau);
 };
 
 #endif

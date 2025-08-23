@@ -10,6 +10,8 @@ private:
     HashTable<string, TaiKhoan> dsTaiKhoan;
 
 public:
+    TaiKhoanRepository();
+
     void load();
     void save();
 
