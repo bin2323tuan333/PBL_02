@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../model/SinhVien.h"
 #include "../../lib/HashTable.h"
 
@@ -7,12 +6,13 @@ using namespace std;
 class SinhVienRepository
 {
 private:
-    const string filename = "../../data/SinhVien.txt";
     HashTable<string, SinhVien> dsSinhVien;
 
 public:
-    void load(const string filename);
-    void save(const string filename);
+    SinhVienRepository();
+
+    void load();
+    void save();
 
     SinhVien *findSinhVien(string maSV);
     void add(SinhVien sv);

@@ -10,19 +10,19 @@ class SinhVien
 {
 private:
     string maSV;
+    string taiKhoanID;
     string hoTen;
     Date ngaySinh;
     string gioiTinh;
     string SDT;
     string lop;
     string khoa;
-    Date ngayVaoKTX;
-    string taiKhoanID;
     string maPhong;
+    Date ngayVaoKTX;
 
 public:
     SinhVien();
-    SinhVien(string maSV, string hoTen, Date ngaySinh, string gioiTinh, string SDT, string lop, string khoa);
+    SinhVien(string maSV, string taiKhoanID, string hoTen, Date ngaySinh, string gioiTinh, string SDT, string lop, string khoa, string maPhong, Date ngayVaoKTX);
 
     void setMaSV(string maSV);
     void setHoTen(string hoTen);

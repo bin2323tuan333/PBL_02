@@ -7,7 +7,6 @@ using namespace std;
 class PhongRepository
 {
 private:
-    const string filename = "../../data/Phong.txt";
     HashTable<string, Phong> dsPhong;
 
 public:

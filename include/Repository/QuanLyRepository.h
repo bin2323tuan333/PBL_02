@@ -7,7 +7,6 @@ using namespace std;
 class QuanLyRepository
 {
 private:
-    const string filename = "../../data/QuanLy.h";
     HashTable<string, QuanLy> dsQuanLy;
 
 public:

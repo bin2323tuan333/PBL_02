@@ -1,7 +1,6 @@
 #ifndef TAIKHOANSERVICE_H
 #define TAIKHOANSERVICE_H
 
-#include <iostream>
 #include "../model/TaiKhoan.h"
 #include "../repository/TaiKhoanRepository.h"
 

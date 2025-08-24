@@ -2,6 +2,7 @@
 #define SINHVIENSERVICE_H
 
 #include <iostream>
+#include "../model/Phong.h"
 #include "../repository/SinhVienRepository.h"
 
 using namespace std;
@@ -13,6 +14,7 @@ private:
 
 public:
     SinhVienService(SinhVienRepository &svRepo) : svRepository(svRepo) {}
+    Phong *
 };
 
 #endif

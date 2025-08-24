@@ -4,15 +4,18 @@
 using namespace std;
 
 SinhVien::SinhVien() {}
-SinhVien::SinhVien(string maSV, string hoTen, Date ngaySinh, string gioiTinh, string SDT, string lop, string khoa)
+SinhVien::SinhVien(string maSV, string taiKhoanID, string hoTen, Date ngaySinh, string gioiTinh, string SDT, string lop, string khoa, string maPhong, Date ngayVaoKTX)
 {
     this->maSV = maSV;
+    this->taiKhoanID = taiKhoanID;
     this->hoTen = hoTen;
     this->ngaySinh = ngaySinh;
     this->gioiTinh = gioiTinh;
     this->SDT = SDT;
     this->lop = lop;
     this->khoa = khoa;
+    this->maPhong = maPhong;
+    this->ngayVaoKTX = ngayVaoKTX;
 }
 
 void SinhVien::setMaSV(string maSV) { this->maSV = maSV; }

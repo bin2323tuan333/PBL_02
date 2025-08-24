@@ -6,7 +6,6 @@ using namespace std;
 class TaiKhoanRepository
 {
 private:
-    const string filename = "../../data/TaiKhoan.txt";
     HashTable<string, TaiKhoan> dsTaiKhoan;
 
 public:
