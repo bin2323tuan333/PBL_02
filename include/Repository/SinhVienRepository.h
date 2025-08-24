@@ -7,7 +7,7 @@ using namespace std;
 class SinhVienRepository
 {
 private:
-    const string filename = "../../Data/SinhVien.txt";
+    const string filename = "../../data/SinhVien.txt";
     HashTable<string, SinhVien> dsSinhVien;
 
 public:

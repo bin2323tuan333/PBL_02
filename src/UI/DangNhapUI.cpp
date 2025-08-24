@@ -5,12 +5,12 @@ using namespace std;
 TaiKhoan *DangNhapUI::dangNhap()
 {
     string username, password;
-    cout << "=== DANG NHAP ===\n";
-    cout << "Username: ";
+    cout << "=========== DANG NHAP ===========\n";
+    cout << "   Username: ";
     cin >> username;
-    cout << "Password: ";
+    cout << "   Password: ";
     cin >> password;
-
+    cout << "\n";
     TaiKhoan *tk = tkService.dangNhap(username, password);
     if (tk->getTaiKhoanID() == "")
     {

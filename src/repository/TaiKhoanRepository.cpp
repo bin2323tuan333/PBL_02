@@ -11,7 +11,7 @@ TaiKhoanRepository::TaiKhoanRepository()
 
 void TaiKhoanRepository::load()
 {
-    ifstream file("../../Data/TaiKhoan.txt");
+    ifstream file("data/TaiKhoan.txt");
     if (!file.is_open())
     {
         cout << "Khong the mo file!" << endl;
