@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include "../../lib/Date.h"
-#include "SinhVien.h"
-#include "Phong.h"
-#include "HoaDon.h"
 
 using namespace std;
 

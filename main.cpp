@@ -1,8 +1,5 @@
 #include <iostream>
-#include "include/model/TaiKhoan.h"
 #include "include/ui/DangNhapUI.h"
-#include "include/service/TaiKhoanService.h"
-#include "include/repository/TaiKhoanRepository.h"
 
 using namespace std;
 
@@ -15,14 +12,14 @@ int main()
 
     while (isRunning)
     {
-        TaiKhoan tk = dnUI.dangNhap();
-        if (tk.getTenDangNhap() == "")
+        TaiKhoan *tk = dnUI.dangNhap();
+        if (tk->getTenDangNhap() == "")
         {
             cout << "Dang nhap that bai hoac chon thoat.\n";
             isRunning = false;
             continue;
         }
-
+        cout << tk->getTenDangNhap() << endl;
         // 2. Kiểm tra role và điều hướng
         // if (currentUser.role == "student")
         // {
@@ -37,3 +34,5 @@ int main()
     }
     return 0;
 }
+
+// g++ main.cpp lib/Date.cpp src/model/HoaDon.cpp src/model/Phong.cpp src/model/QuanLy.cpp src/model/SinhVien.cpp src/model/TaiKhoan.cpp src/repository/TaiKhoanRepository.cpp src/service/TaiKhoanService.cpp src/ui/DangNhapUI.cpp -o main.exe

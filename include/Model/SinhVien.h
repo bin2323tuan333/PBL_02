@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include "../../lib/Date.h"
-#include "Phong.h"
-#include "HoaDon.h"
 
 using namespace std;
 

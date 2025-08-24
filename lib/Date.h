@@ -20,10 +20,6 @@ public:
     int getYear();
 
     void setDate(int d, int m, int y);
-
-    bool isValid();
-    void input();
-    void display();
 };
 
 #endif

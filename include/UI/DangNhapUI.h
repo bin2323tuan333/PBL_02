@@ -2,7 +2,6 @@
 #define DANGNHAPUI_H
 
 #include <iostream>
-#include "../model/TaiKhoan.h"
 #include "../service/TaiKhoanService.h"
 using namespace std;
 
@@ -13,7 +12,7 @@ private:
 
 public:
     DangNhapUI(TaiKhoanService &service) : tkService(service) {}
-    TaiKhoan dangNhap();
+    TaiKhoan *dangNhap();
 };
 
 #endif

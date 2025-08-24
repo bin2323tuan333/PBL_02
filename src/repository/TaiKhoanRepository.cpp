@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include "../../include/repository/TaiKhoanRepository.h"
 
 TaiKhoanRepository::TaiKhoanRepository()
@@ -10,10 +11,11 @@ TaiKhoanRepository::TaiKhoanRepository()
 
 void TaiKhoanRepository::load()
 {
-    ifstream file(this->filename);
+    ifstream file("../../Data/TaiKhoan.txt");
     if (!file.is_open())
     {
         cout << "Khong the mo file!" << endl;
+        exit(1);
         return;
     }
     string line;
@@ -51,7 +53,7 @@ void TaiKhoanRepository::load()
 
 void TaiKhoanRepository::save()
 {
-    ofstream file(this->filename);
+    ofstream file("../../Data/TaiKhoan.txt");
     if (!file.is_open())
     {
         cout << "Khong the mo file!" << endl;
@@ -60,7 +62,8 @@ void TaiKhoanRepository::save()
 
     for (int i = 0; i < dsTaiKhoan.getSize(); i++)
     {
-        HashNode<string, TaiKhoan> *tmpNode = dsTaiKhoan.getHead(i);
+        string key = to_string(i);
+        HashNode<string, TaiKhoan> *tmpNode = dsTaiKhoan.getHead(key);
         while (tmpNode != nullptr)
         {
             file << tmpNode->value.getTaiKhoanID() << ";"

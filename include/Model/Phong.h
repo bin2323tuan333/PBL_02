@@ -1,7 +1,6 @@
 #ifndef PHONG_H
 #define PHONG_H
 
-#include "SinhVien.h"
 #include <iostream>
 using namespace std;
 
