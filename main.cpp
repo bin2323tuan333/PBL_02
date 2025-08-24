@@ -14,16 +14,18 @@ int main()
     {
         cout << "Dang nhap that bai hoac chon thoat.\n";
     }
-    cout << tk->getTenDangNhap() << endl;
+
     // 2. Kiểm tra role và điều hướng
-    // if (currentUser.role == "student")
-    // {
-    //     ShowStudentMenu(currentUser); // Menu dành cho sinh viên
-    // }
-    // else if (currentUser.role == "manager")
-    // {
-    //     ShowManagerMenu(currentUser); // Menu dành cho quản lý
-    // }
+    if ((tk->getTaiKhoanID())[3] == '0')
+    {
+        cout << "SV";
+        // ShowStudentMenu(currentUser); // Menu dành cho sinh viên
+    }
+    else if ((tk->getTaiKhoanID())[3] == '1')
+    {
+        cout << "QL";
+        // ShowManagerMenu(currentUser); // Menu dành cho quản lý
+    }
 
     // 3. Sau khi Logout từ menu → quay lại vòng lặp đăng nhập
 }
